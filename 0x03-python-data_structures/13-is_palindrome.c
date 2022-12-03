@@ -1,33 +1,40 @@
 #include "lists.h"
 #include <stdio.h>
-#include <stddef.h>
 #include <stdlib.h>
+#include <stddef.h>
 /**
  * is_palindrome - check if linked list is a palindrome
- * @head: pointer to pointer head
- * Return: o if is not a palindrome, 1 if is a palindrome
+ * @head: pointer to pointer to head of the list
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
 int is_palindrome(listint_t **head)
 {
-	if (head == NULL || *head == NULL)
-		return (1);
-	return (check_pali(head, *head));
-}
-/**
- *check_pali - function to if the list is palindrome
- *@head: pointer to the start
- *@tail: pointer to the end
- *Return: 0 if not palindrome else 1
- */
-int check_pali(listint_t **head, listint_t *tail)
-{
-	if (tail == NULL)
-		return (1);
-	if (check_pali(head, tail->next) && (*head)->n == tail->n)
-	{
-		*head = (*head)->next;
-		return (1);
-	}
-	return (0);
-}
+	listint_t *temp = *head;
+	int size = sizeof(int);
+	int i = 1;
+	int left = 0;
+	int right = i - 1;
+	int *arr = malloc(100000 * sizeof(int));
 
+	arr[0] = (*head)->n;
+
+	if (*head == NULL)
+		return (1);
+
+	temp = temp->next;
+
+	while (temp != NULL)
+	{
+		size += sizeof(int);
+		arr = realloc(arr, size);
+		arr[i] = temp->n;
+		i++;
+		temp = temp->next;
+	}
+	for (; left < right; left++, right--)
+	{
+		if (arr[left] != arr[right])
+			return (0);
+	}
+	return (1);
+}
