@@ -46,7 +46,7 @@ class Node:
         """
         methods that sets the new instance
         """
-        if value is not None and not isinstance(value, Node):
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
@@ -56,25 +56,31 @@ class SinglyLinkedList:
     class that generate a instace of singlylinked list
     """
     def __init__(self):
+        """
+        initialize a new singlylinked list
+        """
         self.__head = None
 
     def sorted_insert(self, value):
         new_node = Node(value)
-        if self.__head is None or self.__head.data >= value:
-            new_node.next_node = self.__head
+        if self.__head is None:
+            new_node.next_node = None
             self.__head = new_node
+        elif self.__head.data > value:
+            new_node.next_node = self._head
+            self.__head = new
         else:
-            current_node = self.__head
-            while current_node.next_node is not None
-            and current_node.next_node.data < value:
-                current_node = current_node.next_node
-            new_node.next_node = current_node.next_node
-            current_node.next_node = new_node
-
-        def __str__(self):
-            current_node = self.__head
+            temp = self.__head
+            while (temp.next_node is not None and
+                    temp.next_node.data < value):
+                temp = temp.next_node
+            new_node.next_node = temp.next_node
+            temp.next_node = new_node
+            
+     def __str__(self):
             result = []
-            while current_node is not None:
-                result.append(str(current_node.data))
-                current_node = current_node.next_node
+            temp = self.__head
+            while temp is not None:
+                result.append(str(temp.data))
+                temp = temp.next_node
             return "\n".join(result)
