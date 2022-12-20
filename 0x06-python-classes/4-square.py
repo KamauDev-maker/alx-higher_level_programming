@@ -23,17 +23,17 @@ class Square:
         method that helps retrieve new instance
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         """
-        method that helps set the new instance 
+        method that helps set the new instance
         """
-         if not isinstance(size, int):
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     def area(self):
         """
