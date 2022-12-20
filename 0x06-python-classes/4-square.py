@@ -18,7 +18,7 @@ class Square:
         self.size = size
 
     @property
-    def size(size):
+    def size(self):
         """
         method that helps retrieve new instance
         """
