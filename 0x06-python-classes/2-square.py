@@ -8,7 +8,7 @@ class Square:
     """
     class that generate new instances of square
     """
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
         method that helps us define properties for object summary
 
