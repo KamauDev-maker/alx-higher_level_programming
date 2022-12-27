@@ -1,0 +1,34 @@
+=======================================
+Function that divides all elements of a matrix
+=======================================
+uses only one function called matrix_divided
+
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+	Division of a matrix with all integers
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	when div is a string
+	>>> matrix_divided([[11, 12, 13], [14, 15, 16]], "6")
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+	when one of the integers is a float
+	>>> matrix_divided([[1, 2.2, 3], [4, 5, 6]], 3)
+	[[0.33, 0.73, 1.0], [1.33, 1.67, 2.0]]
+
+	division by zero i.e. div = 0
+	>>> matrix_divided([[11, 12, 13], [14, 15, 16]], 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+	when rows are of different size
+	>>> matrix_divided([[11, 12], [13, 14, 15]], 6)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+	when all elements of a matrix are strings
+	>>> matrix_divided([["11", "12", "13"], ["14", "15", "16"]], 6)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
