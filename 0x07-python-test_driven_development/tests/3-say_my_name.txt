@@ -1,0 +1,17 @@
+=======================================
+Function that prints my first_name and Last-name
+=======================================
+
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+	>>> say_my_name("Sekani", "Kamau")
+	My name is Sekani Kamau
+
+	Raises an exception if the first name is not a string
+	>>> say_my_name(18, "Kamau")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	Raises an exception if the last name is not a string
+	>>> say_my_name("Sekani", 18)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
