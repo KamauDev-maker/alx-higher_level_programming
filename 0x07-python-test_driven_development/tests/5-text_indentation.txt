@@ -1,0 +1,17 @@
+=======================================
+Prints a text with 2 new line after .?:
+=======================================
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("Amigos?")
+	Amigos?
+	<BLANKLINE>
+
+	>>> text_indentation("Hi Sekani.  ")
+	Hi Sekani.
+	<BLANKLINE>
+
+	text must be a string
+	>>> text_indentation(6)
+	Traceback (most recent call last):
+	TypeError: text must be a string
