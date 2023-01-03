@@ -3,8 +3,8 @@
 No module Imported
 """
 
-
-def width(self, width=0, height=0):
+class Rectangle:
+    def width(self, width=0, height=0):
     """
     method that define the property objects summarry of rectangle
     """
