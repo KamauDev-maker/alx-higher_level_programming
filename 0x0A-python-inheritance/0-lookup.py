@@ -2,6 +2,8 @@
 """
 Gets the list of attributes and methods
 """
+
+
 def lookup(obj):
     """
     Gets the list of attributes and methods
