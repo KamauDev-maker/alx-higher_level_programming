@@ -1,4 +1,4 @@
---creates a table second_table in the database
+-- Creates a table second_table in the database
 CREATE TABLE second_table (
 id INT,
 name VACHAR(256),
