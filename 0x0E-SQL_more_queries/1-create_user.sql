@@ -1,3 +1,7 @@
--- Script that lists all privileges of the MYSQL
-SHOW GRANTS FOR 'user_0d_1'@'localhost';
-SHOW GRANTS FOR 'user_0d_2'@'localhost';
+-- Script that creates the MYSQL server user
+CREATE USER
+	IF NOT EXISTS 'user_0d_1'@'localhost'
+	IDENTIFIED BY 'user_0d_1_pwd';
+GRATNT ALL PRIVILEGES
+	ON *.*
+	TO 'user_0d_1'@'localhost';
