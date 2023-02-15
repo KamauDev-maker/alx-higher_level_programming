@@ -1,7 +1,3 @@
 -- Script that creates the MYSQL server user
-CREATE USER
-IF NOT EXISTS 'user_0d_1'@'localhost'
-IDENTIFIED BY 'user_0d_1_pwd';
-GRATNT ALL PRIVILEGES
-ON *.*
-TO 'user_0d_1'@'localhost';
+CREATE USER IF NOT EXISTS user_0d_1@localhost IDENTIFIED BY 'user_0d_1pwd';
+GRANT ALL PRIVILEGES ON * . * TO user_0d_1@localhost;
