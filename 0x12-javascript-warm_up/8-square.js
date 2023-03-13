@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//parse the first arg as an int
+// parse the first arg as an int
 const size = parseInt(process.argv[2]);
 
 if (isNaN(size)) {
@@ -8,7 +8,7 @@ if (isNaN(size)) {
   for (let i = 0; i < size; i++) {
     let row = ''; // inner loop initialize an empty string
     for (let j = 0; j < size; j++) {
-      row += 'X'; 
+      row += 'X';
     }
     console.log(row);
   }
