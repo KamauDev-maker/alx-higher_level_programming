@@ -8,3 +8,4 @@ if (numArgs === 0) {
 } else {
   console.log('Argument found');
 }
+
