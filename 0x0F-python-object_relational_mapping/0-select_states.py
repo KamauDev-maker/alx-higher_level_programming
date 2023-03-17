@@ -2,24 +2,15 @@
 """
 Lists all states from the database hbtn_0e_0_usa takes 3 arguments
 """
-
-import MySQLdb
-import sys
-
 if __name__ == "__main__":
-    # Database credentials
-
-    username = sys.argv[1]
-    password = sys.argv[2]
-    dbname = sys.argv[3]
-
-    # connect to MySQL server
+    import MySQLdb
+    import sys
     db = MySQLdb.connect(
             host="localhost",
-            user=username,
-            passwd=password,
-            db=dbname,
-            port=3306)
+            port=3306,
+            user=sys.argv[1],
+            passwd=sys.argv{2],
+            db=sys.argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT *FROM states ORDER BY id ASC")
     results = cursor.fetchall()
