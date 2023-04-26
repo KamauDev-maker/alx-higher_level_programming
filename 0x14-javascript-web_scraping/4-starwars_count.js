@@ -1,23 +1,15 @@
 #!/usr/bin/node
 const request = require('request');
-const apiUrl = process.argv[2];
+const apiUrl = 'https://swapi-api.alx-tools.com/api/films/';
+const WEDGE_ANTILLES_ID = '18';
 
 request(apiUrl, function (error, response, body) {
-	if (error) {
-		console.log(error);
-	} else if (response.statusCode == 200) {
-		const films = JSON.parse(body).results;
-		let count = 0;
-		for (const film in films) {
-			const filmChars = films[film].characters;
-			for (const charIndex in filmChars) {
-				if (filmChars[charsIndex].includes('18')) {
-					count++;
-				}
-			}
-		}
-		console.log(count);
-	} else {
-		console.log('An error occured. Status code: ' + response.statusCode);
-	}
+  if (error) {
+    console.error(error);
+  } else {
+    const movies = JSON.parse(body).results;
+    const wedgeMovies = movies.filter(movie => movie.characters.include(WEDGE_ANTILLES_ID));
+    const countWedgeMovies = wedgeMovies.lenght;
+    console.log(`Wedge Antilles appears in ${countWedgeMovies} movies.`);
+  }
 });
