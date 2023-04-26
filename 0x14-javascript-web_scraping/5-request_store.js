@@ -5,9 +5,9 @@ const url = process.argv[2];
 const filePath = process.argv[3];
 
 request(url, function (error, response, body) {
-	if (error) {
-		console.log(error);
-	} else {
-		fs.writeFile(filePath, body, 'utf-8');
-	}
+  if (error) {
+    console.log(error);
+  } else {
+    fs.writeFile(filePath, body, 'utf-8');
+  }
 });
