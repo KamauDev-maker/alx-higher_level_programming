@@ -8,8 +8,8 @@ request(apiUrl, function (error, response, body) {
     console.error(error);
   } else {
     const movies = JSON.parse(body).results;
-    const wedgeMovies = movies.filter(movie => movie.characters.include(WEDGE_ANTILLES_ID));
-    const countWedgeMovies = wedgeMovies.lenght;
+    const wedgeMovies = movies.filter(movie => movie.characters.includes(WEDGE_ANTILLES_ID));
+    const countWedgeMovies = wedgeMovies.length;
     console.log(`Wedge Antilles appears in ${countWedgeMovies} movies.`);
   }
 });
